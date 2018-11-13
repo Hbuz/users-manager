@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/UserController.js"></script>
+    <script src="js/app/UserService.js"></script>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="demo">
+<hr/>
+<div ng-controller="UserController">
+    <div>
+        <label>User</label> <input type="text" ng-model="userDto.userName" class="spacing"/>
+        <button ng-click="saveUser()">Save User</button>
+    </div>
+    <hr/>
+    <div>
+        <p>{{allUsers | json}}</p>
+    </div>
+    <hr/>
+    <div ng-repeat="user in allUsers">
+        <div>
+            <h3>{{user.userName}}</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>
